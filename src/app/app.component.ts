@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todo-app';
+
+  public todos: string[] = ['Do homework', 'Pet a cat', 'Was dishes'];
+
+  public todoForm = new FormGroup( {
+    todo: new FormControl('', Validators.required)
+  });
+
+  public onSubmit(): void {
+    const newTodo = this.todoForm.value.todo;
+    if (newTodo !== '') {
+      this.todos.push(newTodo);
+      this.todoForm.setValue({
+        todo: ''
+      });
+    }
+  }
+
 }
+
