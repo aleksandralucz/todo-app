@@ -1,14 +1,25 @@
-<div class="container pt-3">
-  <h1 class="text-center">TODO APP</h1>
-  <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
-    <label for="todoInput" class="form-label">Todo:</label>
-    <input id="todoInput" type="text" formControlName="todo" class="form-control" placeholder="Type your todo">
-    <div class="mb-5">
-      <button type="submit" [disabled]="!todoForm.valid" class="btn btn-info float-end">
-        Add!
-      </button>
+<body>
+<div class="main" ng-app="myList" ng-controller="myController">
+  <h1 class="text-center">Todo List</h1>
+<!--  <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">-->
+    <label>Add to do:</label>
+    <div class="search">
+      <input type="text" placeholder="Type your todo" ng-model="addMe">
+      <span ng-click="addItm()"><i class="fas fa-plus"></i></span>
+<!--      <button type="submit" [disabled]="!todoForm.valid" class="btn btn-info float-end">-->
+<!--        click to add-->
+<!--      </button>-->
     </div>
-  </form>
+    <div>
+      <ul>
+      <li ng-repeat="list">{{todos}}<i ng-click="removeFromList($index)" class="fas fa-trash-alt">
+      </i>
+      </li>
+      </ul>
+<!--      <p>{{}}</p>-->
+
+    </div>
+<!--  </form>-->
   <h2>My todos:</h2>
   <div *ngIf="todos.length === 0" class="text-center">
     No todos.
@@ -19,6 +30,8 @@
     </li>
   </ul>
 </div>
+</body>
+
 
 
 <!--1. []-->
