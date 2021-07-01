@@ -1,11 +1,11 @@
 <div class="container pt-3">
-  <h1 class="text-center">TODO APP</h1>
+  <h1 class="text-center">Todo List</h1>
   <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
-    <label for="todoInput" class="form-label">Todo:</label>
+    <h1 for="todoInput" class="form-label">My todo list: </h1>
     <input id="todoInput" type="text" formControlName="todo" class="form-control" placeholder="Type your todo">
-    <div class="mb-5">
+    <div class="search">
       <button type="submit" [disabled]="!todoForm.valid" class="btn btn-info float-end">
-        Add!
+        click
       </button>
     </div>
   </form>

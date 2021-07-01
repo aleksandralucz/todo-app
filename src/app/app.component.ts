@@ -8,7 +8,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class AppComponent {
 
-  public todos: string[] = ['Do homework', 'Pet a cat', 'Was dishes'];
+  public todos: string[] = [];
 
   public todoForm = new FormGroup( {
     todo: new FormControl('', Validators.required)
