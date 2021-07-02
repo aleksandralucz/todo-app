@@ -12,4 +12,6 @@ body {
 div {
   padding-block: 4px;
 }
-
+#taskToRemove {
+  font-size: 5px;
+}

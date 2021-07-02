@@ -16,38 +16,10 @@
   <ul class="list-group">
     <li *ngFor="let todo of todos" class="list-group-item">
       {{ todo }}
-      <a href="" ng-click="delete()" class="fas fa-trash-alt"></a>
+      <td>
+        <button class="fas fa-trash-alt" (click)="deleteToDo(0)"> Delete </button>
+      </td>
     </li>
   </ul>
 </div>
 </body>
-
-<!--&lt;!&ndash;  <div>&ndash;&gt;-->
-<!--&lt;!&ndash;          <ul>&ndash;&gt;-->
-<!--&lt;!&ndash;          <li ng-repeat="todos">{{todos}}<i ng-click="removeFromList($index)" class="fas fa-trash-alt">&ndash;&gt;-->
-<!--&lt;!&ndash;          </i></li>&ndash;&gt;-->
-<!--&lt;!&ndash;          </ul>&ndash;&gt;-->
-<!--&lt;!&ndash;    </div>&ndash;&gt;-->
-<!--&lt;!&ndash;    <div class="search">&ndash;&gt;-->
-<!--&lt;!&ndash;      <input type="text" placeholder="Type your todo" ng-model="addMe">&ndash;&gt;-->
-<!--&lt;!&ndash;      <span ng-click="onSubmit"><i class="fas fa-plus"></i></span>&ndash;&gt;-->
-<!--&lt;!&ndash;    </div>&ndash;&gt;-->
-<!--&lt;!&ndash;    <div>&ndash;&gt;-->
-<!--&lt;!&ndash;      <ul>&ndash;&gt;-->
-<!--      <li ng-repeat="todos">{{todos}}<i ng-click="removeFromList($index)" class="fas fa-trash-alt">-->
-<!--&lt;!&ndash;      </i></li>&ndash;&gt;-->
-<!--&lt;!&ndash;      </ul>&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;      <p>{{todos}}</p>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;    </div>&ndash;&gt;-->
-
-
-
-<!--</div>-->
-<!--</body>-->
-
-
-
-<!--&lt;!&ndash;1. []&ndash;&gt;-->
-<!--&lt;!&ndash;<button [disabled]="!todoForm.valid" ></button>&ndash;&gt;-->
-<!--&lt;!&ndash;2. ()&ndash;&gt;-->
-<!--&lt;!&ndash;<button (click)="onSubmit()" )></button>&ndash;&gt;-->

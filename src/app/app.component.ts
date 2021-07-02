@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import { OnInit, Input, EventEmitter, Output } from '@angular/core';
+import {OnInit, Input, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +25,12 @@ export class AppComponent {
       });
     }
   }
-  removeItem(): void {
-    this.removeItem().deleteItem(this.todos);
+
+  deleteToDo(index: number) {
+    let do_delete = confirm("Are you sure to delete tasks?");
+    if (do_delete) {
+      this.todos.splice(index, 1);
+    }
   }
 }
+
