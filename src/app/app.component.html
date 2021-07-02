@@ -1,25 +1,14 @@
 <body>
-<div class="main" ng-app="myList" ng-controller="myController">
+<div class="container pt-3">
   <h1 class="text-center">Todo List</h1>
-<!--  <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">-->
-    <label>Add to do:</label>
-    <div class="search">
-      <input type="text" placeholder="Type your todo" ng-model="addMe">
-      <span ng-click="addItm()"><i class="fas fa-plus"></i></span>
-<!--      <button type="submit" [disabled]="!todoForm.valid" class="btn btn-info float-end">-->
-<!--        click to add-->
-<!--      </button>-->
+  <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+    <label for="todoInput" class="form-label">Todo:</label>
+    <input id="todoInput" type="text" formControlName="todo" class="form-control" placeholder="Type what you have to do">
+    <div class="mb-5">
+      <button type="submit" [disabled]="!todoForm.valid" class="btn btn-info float-end"><i class="fas fa-plus">
+      </i></button>
     </div>
-    <div>
-      <ul>
-      <li ng-repeat="list">{{todos}}<i ng-click="removeFromList($index)" class="fas fa-trash-alt">
-      </i>
-      </li>
-      </ul>
-<!--      <p>{{}}</p>-->
-
-    </div>
-<!--  </form>-->
+  </form>
   <h2>My todos:</h2>
   <div *ngIf="todos.length === 0" class="text-center">
     No todos.
@@ -27,14 +16,38 @@
   <ul class="list-group">
     <li *ngFor="let todo of todos" class="list-group-item">
       {{ todo }}
+      <a href="" ng-click="delete()" class="fas fa-trash-alt"></a>
     </li>
   </ul>
 </div>
 </body>
 
+<!--&lt;!&ndash;  <div>&ndash;&gt;-->
+<!--&lt;!&ndash;          <ul>&ndash;&gt;-->
+<!--&lt;!&ndash;          <li ng-repeat="todos">{{todos}}<i ng-click="removeFromList($index)" class="fas fa-trash-alt">&ndash;&gt;-->
+<!--&lt;!&ndash;          </i></li>&ndash;&gt;-->
+<!--&lt;!&ndash;          </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="search">&ndash;&gt;-->
+<!--&lt;!&ndash;      <input type="text" placeholder="Type your todo" ng-model="addMe">&ndash;&gt;-->
+<!--&lt;!&ndash;      <span ng-click="onSubmit"><i class="fas fa-plus"></i></span>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    <div>&ndash;&gt;-->
+<!--&lt;!&ndash;      <ul>&ndash;&gt;-->
+<!--      <li ng-repeat="todos">{{todos}}<i ng-click="removeFromList($index)" class="fas fa-trash-alt">-->
+<!--&lt;!&ndash;      </i></li>&ndash;&gt;-->
+<!--&lt;!&ndash;      </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;      <p>{{todos}}</p>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
 
 
-<!--1. []-->
-<!--<button [disabled]="!todoForm.valid" ></button>-->
-<!--2. ()-->
-<!--<button (click)="onSubmit()" )></button>-->
+
+<!--</div>-->
+<!--</body>-->
+
+
+
+<!--&lt;!&ndash;1. []&ndash;&gt;-->
+<!--&lt;!&ndash;<button [disabled]="!todoForm.valid" ></button>&ndash;&gt;-->
+<!--&lt;!&ndash;2. ()&ndash;&gt;-->
+<!--&lt;!&ndash;<button (click)="onSubmit()" )></button>&ndash;&gt;-->

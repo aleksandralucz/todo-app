@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,10 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class AppComponent {
 
+
   public todos: string[] = [];
 
-  public todoForm = new FormGroup( {
+  public todoForm = new FormGroup({
     todo: new FormControl('', Validators.required)
   });
 
@@ -23,6 +25,7 @@ export class AppComponent {
       });
     }
   }
-
+  removeItem(): void {
+    this.removeItem().deleteItem(this.todos);
+  }
 }
-
